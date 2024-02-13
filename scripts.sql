@@ -27,11 +27,11 @@ CREATE TABLE Facilities (
 -- Populate tables with data
 
 INSERT INTO Parks (ParkName)
-SELECT DISTINCT ParkName 
+SELECT DISTINCT ParkName -- Slect unique park names from parks_info object
 FROM Parks_info
 ORDER BY ParkName; -- Order by park name results in the same order as input table
 
-INSERT INTO Facilities (ParkID, FacilityName) VALUES
+INSERT INTO Facilities (ParkID, FacilityName) VALUES -- Manually insert facility name and park IDs
 (1, 'Playground'), 
 (1, 'Restroom'), 
 (1, 'Picnic Area'),

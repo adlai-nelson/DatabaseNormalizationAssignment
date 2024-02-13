@@ -1,24 +1,38 @@
 # Database Normalization Assignment: IDCE 376 Assign. 2
-## Adlai Nelson 
+Adlai Nelson 
 
 
 ## Introduction
 
-The purpose of this assignment was to be familiarized with 1NF and 2NF form, and how to deal with relations in postgreSQL.
+The purpose of this assignment was to be familiarized with 1NF and 2NF form, and how to deal with relations in postgreSQL. 
+We learned how to define foreign and primary keys, and what those relations mean. We also continued to build skills in troubleshooting.
+We used a simple demo table, and manually manipulated the columns to create 1NF and 2NF compliant data structures.
 
 ## Methods
 
+I used PGadmin 4 for postgreSQL to complete this assignment. 
+Some values were inserted from the origonally created tables using a query, while some were manually inserted. 
+See scripts.sql for specific scrips and comments.
 
 ## Results
 
-To format the data in 1NF, two tables were required. 
+### 1NF
+To format our data in 1NF, two tables were required: Parks, and Facilities
 
-![Table in 1NF form](/Figures/facilities-1nf.png)
+![Parks table in 1NF](/Figures/parks-1nf.png)
+Parks table in 1NF. Each column contains only one entry, the name of the park
 
-```
-CREATE TABLE Parks_Info (
-    ID SERIAL PRIMARY KEY,
-    ParkName VARCHAR(255),
-    Facilities VARCHAR(255) 
-);
-```
+![Facilities table in 1NF](/Figures/facilities-1nf.png)
+Facilities table in 1NF. Note the foreign key identifying wich park each facility belongs to. Note also each facilities ID corresponds to only one entry in the names field.
+
+### 2NF
+To format our data in 2NF, three tables were required: Parks, Facilities, and Parkfacilities
+
+![Parks table in 2NF](/Figures/parks-2nf.png)
+Parks table in 2NF. 
+
+![Facilities table in 2NF](/Figures/facilities-2nf.png)
+Facilities table in 2NF. Note how there is a foreign key 'parkfacilityID', linked to the park facilities table. This eliminates partial dependencies
+
+![Parkfacilities table in 2NF](/Figures/parkfacilities-2nf.png)
+Parkfacilities table in 2NF Each parkfacilitiesID corresponds to one name value
