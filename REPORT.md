@@ -16,13 +16,15 @@ Some values were inserted from the originally created tables using a query, whil
 
 To normalize the tables to 1NF, I created a new 'parks' table with only the park name and parkid. 
 Initially, the park names were assigned to different parkIDs than the original table. To solve this, 
-I used the `ORDER BY` command to order the park names by alphabetical order and assign the desired park to the desired parkID. 
+I used the `ORDER BY` command to order the park names by alphabetical order and assign them to their parkIDs in a reproducable manner. 
 I then created the facilities table, manually inputing facilities, along with the corresponding ParkID as a foreign key. 
 This resulted in a data structure where each entry is atomic (indivisible), making it compliant with 1NF.
 
 To normalize the data to 2NF, I retained the same parks table. 
 To remove partial dependencies, a new parkfacilities table needed to be created, containing the names of the park faciltities. 
 Once this table was created, unique park facilities names were inserted into the table. 
+I again used the `ORDER BY` paramater to order the names by alphabetical order. 
+This way I could know wich parkfacilitiesID was assigned to each name without even checking the table, as they were assigned in alphabetical order.
 Next, parkfacilityIDs were added as a forign key to the to the facilities table, and the names column was removed.
 The resulting data structure has no partial dependencies, so it is 2NF compliant.
 
@@ -52,4 +54,4 @@ Facilities table in 2NF. Note how there is a foreign key 'parkfacilityID', linke
 
 ![Parkfacilities table in 2NF](/Figures/parkfacilities-2nf.png)
 
-Parkfacilities table in 2NF Each parkfacilitiesID corresponds to one name value
+Parkfacilities table in 2NF. Each parkfacilitiesID corresponds to one name value.
