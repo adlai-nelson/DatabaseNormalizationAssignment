@@ -6,12 +6,12 @@ Adlai Nelson
 
 The purpose of this assignment was to be familiarized with 1NF and 2NF form, and how to deal with relations in postgreSQL. 
 We learned how to define foreign and primary keys, and what those relations mean, and continued to build skills in troubleshooting.
-For the purposes of the assignment, a simple demo table was used, and manually manipulated the columns to create 1NF and 2NF compliant data structures.
+For the purposes of the assignment, a simple demo table was used, and new tables were created to beecome 1NF and 2NF compliant data structures.
 
 ## Methods
 
 I used PGAdmin 4 for postgreSQL to complete this assignment. 
-Some values were inserted from the originaly created tables using a query, while some were manually inserted
+Some values were inserted from the originally created tables using a query, while some were manually inserted
 (see scripts.sql for specific scrips and comments).
 
 ## Results
